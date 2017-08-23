@@ -16,7 +16,11 @@ exports.seed = function(knex, Promise) {
           friends_list: {
             "friends": "[ 2 ]"
           },
-          favorite_teams: null,
+          favorite_teams: {
+            "mlb": "[14, 5, 24, 10, 12]"
+          },
+          last_visit: new Date('2017-03-22 14:55:16 UTC'),
+          loyalty_score: 101,
           physical_street_address: null,
           physical_state: null,
           physical_zip: null,

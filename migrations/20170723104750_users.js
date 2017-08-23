@@ -10,10 +10,12 @@ exports.up = function(knex, Promise) {
     table.string('smack_talk').defaultTo(null);
     table.json('friends_list').defaultTo(null);
     table.json('favorite_teams').defaultTo(null);
+    table.date('last_visit').notNullable().defaultTo('2017-03-22 14:55:16 UTC');
+    table.integer('loyalty_score').notNullable().defaultTo(0);
     table.string('physical_street_address').defaultTo(null);
     table.string('physical_state').defaultTo(null);
     table.string('physical_zip').defaultTo(null);
-    table.number('phone').defaultTo(null);
+    table.string('phone').defaultTo(null);
     table.timestamps(true, true);
   });
 };
