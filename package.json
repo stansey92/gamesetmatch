@@ -2,7 +2,7 @@
   "name": "gamesetmatch",
   "version": "1.0.0",
   "description": "Never watch the game alone again",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -17,8 +17,13 @@
   },
   "homepage": "https://github.com/HurdAudio/gamesetmatch#readme",
   "dependencies": {
+    "bcrypt": "^1.0.3",
+    "body-parser": "^1.18.2",
+    "cookie-session": "^2.0.0-beta.3",
+    "dotenv": "^4.0.0",
     "express": "^4.15.3",
     "knex": "^0.13.0",
+    "nanoid": "^0.2.2",
     "pg": "^7.0.2"
   }
 }
