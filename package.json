@@ -4,8 +4,11 @@
   "description": "Never watch the game alone again",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+      "start": "node ./bin/www",
+      "knex": "knex",
+      "heroku-postbuild": "knex migrate:rollback; knex migrate:latest; knex seed:run;",
+      "nodemon": "node app.js"
+    },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/HurdAudio/gamesetmatch.git"
