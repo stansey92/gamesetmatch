@@ -9,8 +9,17 @@ const cookieSession = require('cookie-session');
 const bcrypt = require('bcrypt');
 const saltRounds = 12;
 const nanoid = require('nanoid');
+const admin = require('firebase-admin');
+const dbURL = require('../config/config');
+// const serviceAccount = require("./config/serviceAccountKey.json");
 
 // const nodemailer = require('nodemailer');
+//
+// admin.initializeApp({
+//   credential: admin.credential.cert(serviceAccount),
+//   databaseURL: dbURL
+// });
+
 
 router.use(cookieSession(
   {
@@ -22,6 +31,7 @@ router.use(cookieSession(
   })
 );
 
+// Modify for firebase
 router.use(function (req,res,next) {
   if (req.session.userId) {
     knex('users')
@@ -83,7 +93,6 @@ router.post('/login', (req,res) => {
   .then((result) => {
     // console.log(result);
 
-
     if (!result || (!bcrypt.compareSync(req.body.password,result.hashed_password))) {
       console.log("invalid password");
       req.session = null;
@@ -140,8 +149,6 @@ router.get('/:id', (req, res, next) => {
 router.post('/', (req, res, next) => {
   var salt = bcrypt.genSaltSync(saltRounds);
   var hash = bcrypt.hashSync(req.body.password, salt);
-
-
 
   knex('users')
   .insert({

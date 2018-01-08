@@ -3,7 +3,7 @@
 const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
-//const knex = require('knex');
+const knex = require('knex');
 const bcrypt = require('bcrypt');
 const request = require('request');
 //const parseString = require('xml2js').parseString;
@@ -14,6 +14,7 @@ const nfl_teams = require('./routes/nfl_teams.js');
 const nba_teams = require('./routes/nba_teams.js');
 const college_d1s = require('./routes/college_d1s.js');
 const mlb_teams = require('./routes/mlb_teams.js');
+const index = require('./routes/index')
 
 require('dotenv').config();
 
@@ -28,15 +29,19 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, '/../', 'node_modules')));
 
 
+app.use('/', index);
+
 app.use('/users', users);
 app.use('/nfl_teams', nfl_teams);
 app.use('/nba_teams', nba_teams);
 app.use('/college_d1s', college_d1s);
 app.use('/mlb_teams', mlb_teams);
 
-app.use('*', function(req, res, next) {
-  res.sendFile('index.html', {root: path.join(__dirname, 'public')});
-});
+// Uncomment if you need wildcard route
+// but you will need to modify it!
+// app.use('*', function(req, res, next) {
+//   res.sendFile('index.html', {root: path.join(__dirname, 'public')});
+// });
 
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
