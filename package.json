@@ -4,10 +4,10 @@
   "description": "Never watch the game alone again",
   "main": "server.js",
   "scripts": {
-    "start": "node ./bin/www",
+    "start": "node server.js",
     "knex": "knex",
     "heroku-postbuild": "knex migrate:rollback; knex migrate:latest; knex seed:run;",
-    "nodemon": "node app.js"
+    "nodemon": "node server.js"
   },
   "repository": {
     "type": "git",
