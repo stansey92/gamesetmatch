@@ -10,7 +10,7 @@ const bcrypt = require('bcrypt');
 const saltRounds = 12;
 const nanoid = require('nanoid');
 const admin = require('firebase-admin');
-const dbURL = require('../config/config');
+const dbURL = require('./config/config');
 // const serviceAccount = require("./config/serviceAccountKey.json");
 
 // const nodemailer = require('nodemailer');
