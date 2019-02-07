@@ -27,7 +27,54 @@ exports.seed = function(knex, Promise) {
           phone: null,
           created_at: new Date('2017-03-22 14:55:16 UTC'),
           updated_at: new Date('2017-03-22 14:55:18 UTC')
-        }
+        },
+        {
+          id: 2,
+          name: 'Sean Tansey',
+          email: 'devin@devinhurd.com',
+          hashed_password: '$2a$06$R08R8hCrwbQlv5m2YnB6a.MyTOMxVMu17rTCKd4LVPfnEZWf6ELP.',
+          is_admin: true,
+          user_avatar_url: 'https://s-media-cache-ak0.pinimg.com/originals/b1/a9/25/b1a9258f681b6d0c86182e5bac02200d.jpg',
+          smack_talk: 'You can\'t have Astros without "ass."',
+          friends_list: {
+            "friends": "[ 2 ]"
+          },
+          favorite_teams: {
+            "mlb": "[14, 5, 24, 10, 12]"
+          },
+          last_visit: new Date('2017-03-22 14:55:16 UTC'),
+          loyalty_score: 101,
+          physical_street_address: null,
+          physical_state: null,
+          physical_zip: null,
+          phone: null,
+          created_at: new Date('2017-03-22 14:55:16 UTC'),
+          updated_at: new Date('2017-03-22 14:55:18 UTC')
+        },
+        {
+          id: 3,
+          name: 'Will Brown',
+          email: 'devin@devinhurd.com',
+          hashed_password: '$2a$06$R08R8hCrwbQlv5m2YnB6a.MyTOMxVMu17rTCKd4LVPfnEZWf6ELP.',
+          is_admin: true,
+          user_avatar_url: 'https://s-media-cache-ak0.pinimg.com/originals/b1/a9/25/b1a9258f681b6d0c86182e5bac02200d.jpg',
+          smack_talk: 'You can\'t have Astros without "ass."',
+          friends_list: {
+            "friends": "[ 2 ]"
+          },
+          favorite_teams: {
+            "mlb": "[14, 5, 24, 10, 12]"
+          },
+          last_visit: new Date('2017-03-22 14:55:16 UTC'),
+          loyalty_score: 101,
+          physical_street_address: null,
+          physical_state: null,
+          physical_zip: null,
+          phone: null,
+          created_at: new Date('2017-03-22 14:55:16 UTC'),
+          updated_at: new Date('2017-03-22 14:55:18 UTC')
+        },
+
       ]);
     }).then(() => {
       return knex.raw("SELECT setval('users_id_seq', (SELECT MAX(id) FROM users));");

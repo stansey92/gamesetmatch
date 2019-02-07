@@ -6,7 +6,7 @@ const knex = require('../knex');
 const router = express.Router();
 const cookieSession = require('cookie-session');
 
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 const saltRounds = 12;
 const nanoid = require('nanoid');
 const admin = require('firebase-admin');

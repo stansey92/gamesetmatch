@@ -20,15 +20,15 @@
   },
   "homepage": "https://github.com/HurdAudio/gamesetmatch#readme",
   "dependencies": {
-    "bcrypt": "^1.0.3",
+    "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.2",
     "cookie-session": "^2.0.0-beta.3",
     "dotenv": "^4.0.0",
     "express": "^4.15.3",
-    "firebase-admin": "^5.7.0",
-    "knex": "^0.13.0",
+    "firebase-admin": "^5.13.1",
+    "knex": "^0.16.3",
     "nanoid": "^0.2.2",
-    "nodemon": "^1.12.1",
+    "nodemon": "^1.18.9",
     "pg": "^7.3.0"
   }
 }
